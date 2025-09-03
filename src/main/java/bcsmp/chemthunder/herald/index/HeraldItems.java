@@ -1,6 +1,7 @@
 package bcsmp.chemthunder.herald.index;
 
 import bcsmp.chemthunder.herald.Herald;
+import bcsmp.chemthunder.herald.item.CrimsonObituaryItem;
 import bcsmp.chemthunder.herald.item.GraceItem;
 import bcsmp.chemthunder.herald.item.SolitudeItem;
 import net.acoyt.acornlib.api.item.AcornItemSettings;
@@ -30,6 +31,11 @@ public interface HeraldItems {
             .attributeModifiers(SwordItem.createAttributeModifiers(HeraldToolMaterial.SILLY, 8, -2.7f))
     ));
 
+    Item CRIMSON_OBITUARY = create("crimson_obituary", new CrimsonObituaryItem(HeraldToolMaterial.SILLY, new Item.Settings()
+            .maxCount(1)
+            .attributeModifiers(SwordItem.createAttributeModifiers(HeraldToolMaterial.SILLY, 6, -2.5f))
+    ));
+
   //  Item MACHINE_OIL_BOTTLE = create("machine_oil_bottle", new OilItem(new Item.Settings()
    //         .maxCount(16)
   //  ));
@@ -38,6 +44,7 @@ public interface HeraldItems {
         ITEMS.keySet().forEach(item -> Registry.register(Registries.ITEM, ITEMS.get(item), item));
 
         modifyItemNameColor(SOLITUDE, 0x1c1c21);
+        modifyItemNameColor(CRIMSON_OBITUARY, 0x801b50);
     }
 
     private static Item create(String name, Item item) {

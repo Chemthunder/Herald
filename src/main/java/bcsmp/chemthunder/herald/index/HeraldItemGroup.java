@@ -28,6 +28,6 @@ public interface HeraldItemGroup {
     private static void addEntries(FabricItemGroupEntries itemGroup) {
     itemGroup.add(HeraldItems.GRACE);
     itemGroup.add(HeraldItems.SOLITUDE);
-
+    itemGroup.add(HeraldItems.CRIMSON_OBITUARY);
     }
 }
