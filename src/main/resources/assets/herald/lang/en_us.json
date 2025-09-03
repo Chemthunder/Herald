@@ -1,0 +1,12 @@
+{
+  "item.herald.grace": "Grace",
+  "death.attack.grace_kill.player": "%1$s beheld the sight of god",
+  "death.attack.grace_kill": "admin moment",
+
+  "item.herald.solitude": "Solitude",
+  "item.herald.solitude.desc": "Lonely no longer.",
+  "death.attack.solitude_kill.player": "%1$s was torn to shreds by %2$s",
+  "death.attack.solitude_kill": "How the hell did you even get this death message lmao :sob:",
+
+  "itemGroup.herald": "Herald"
+}

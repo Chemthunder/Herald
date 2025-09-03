@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "herald",
+	"version": "${version}",
+	"name": "Herald",
+	"description": "silly divinity weaponry shit",
+	"authors": [
+		"Chemthunder"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/herald/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"bcsmp.chemthunder.herald.Herald"
+		],
+		"fabric-datagen": [
+			"bcsmp.chemthunder.herald.HeraldDataGenerator"
+		]
+	},
+	"mixins": [
+		"herald.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
