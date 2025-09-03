@@ -10,7 +10,7 @@ import net.minecraft.registry.tag.TagKey;
 
 public interface HeraldToolMaterial {
 
-    ToolMaterial SILLY = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 999999, 5, 0, 0, ItemTags.BEACON_PAYMENT_ITEMS);
+    ToolMaterial SILLY = create(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 0, 5, 0, 0, ItemTags.BEACON_PAYMENT_ITEMS);
 
     private static ToolMaterial create(TagKey<Block> incorrectBlocksForDrops, int durability, float miningSpeed, float attackDamageBonus, int enchantmentValue, TagKey<Item> repairItems) {
 
