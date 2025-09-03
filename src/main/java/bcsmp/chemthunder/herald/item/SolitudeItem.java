@@ -2,6 +2,7 @@ package bcsmp.chemthunder.herald.item;
 
 import bcsmp.chemthunder.herald.index.HeraldDamageSources;
 import net.acoyt.acornlib.api.item.CustomHitParticleItem;
+import net.acoyt.acornlib.api.item.CustomHitSoundItem;
 import net.acoyt.acornlib.api.item.CustomKillSourceItem;
 import net.acoyt.acornlib.api.item.ShieldBreaker;
 import net.acoyt.acornlib.impl.client.particle.SweepParticleEffect;
@@ -14,6 +15,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
@@ -21,12 +23,12 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class SolitudeItem extends SwordItem implements CustomKillSourceItem, CustomHitParticleItem, ShieldBreaker {
+public class SolitudeItem extends SwordItem implements CustomKillSourceItem, CustomHitParticleItem, ShieldBreaker, CustomHitSoundItem {
     public SolitudeItem(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
     }
 
-    public static final SweepParticleEffect[] EFFECTS = new SweepParticleEffect[]{new SweepParticleEffect(0x25252b, 0x0c0c0f)};
+    public static final SweepParticleEffect[] EFFECTS = new SweepParticleEffect[]{new SweepParticleEffect(0x25252b, 0x18181c), new SweepParticleEffect(0x1b1b1f, 0x2e2e33)};
 
     public void spawnHitParticles(PlayerEntity player) {
         double deltaX = -MathHelper.sin((float) (player.getYaw() * (Math.PI / 180.0F)));
@@ -53,11 +55,18 @@ public class SolitudeItem extends SwordItem implements CustomKillSourceItem, Cus
         return 60;
     }
 
+
+
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(this.getDescription().withColor(0x1f1f24));
     }
 
     public MutableText getDescription() {
         return Text.translatable(this.getTranslationKey() + ".desc");
+    }
+
+    @Override
+    public void playHitSound(PlayerEntity playerEntity) {
+        playerEntity.playSound(SoundEvents.BLOCK_CHAIN_HIT, 8, 0);
     }
 }

@@ -21,7 +21,6 @@ public abstract class VindicatorEntityMixin extends IllagerEntity {
         super(entityType, world);
     }
 
-
     @Unique
     private void randomlyGiveSoli(Random random) {
         if ((double) random.nextFloat() > 0.9) {

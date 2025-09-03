@@ -25,9 +25,9 @@ public interface HeraldItems {
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.3f))
     ));
 
-    Item SOLITUDE = create("solitude", new SolitudeItem(ToolMaterials.NETHERITE, new Item.Settings()
+    Item SOLITUDE = create("solitude", new SolitudeItem(HeraldToolMaterial.SILLY, new Item.Settings()
             .maxCount(1)
-            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.7f))
+            .attributeModifiers(SwordItem.createAttributeModifiers(HeraldToolMaterial.SILLY, 8, -2.7f))
     ));
 
   //  Item MACHINE_OIL_BOTTLE = create("machine_oil_bottle", new OilItem(new Item.Settings()
